@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>文件夹环</title>
+    <style type="text/css">
+      *{padding: 0;margin: 0;}
+      .list ul li{
+        width: 25%;float: left;
+        padding: 10px 0;
+        list-style-type: none;
+      }
+      body{
+        background: #eee;
+        font-family: arial,sans-serif,'宋体';
+      }
+      a{text-decoration: none}
+      ul{
+        padding-left: 5px;
+      }
+      li{
+
+      }
+      .back{
+        padding-left: 5px;
+      }
+      .list a span{float: left;}
+      .list a{text-decoration: none;
+        color: #555;font-size: 13px;
+        background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC4SURBVCjPdZFbDsIgEEWnrsMm7oGGfZrohxvU+Iq1TyjU60Bf1pac4Yc5YS4ZAtGWBMk/drQBOVwJlZrWYkLhsB8UV9K0BUrPGy9cWbng2CtEEUmLGppPjRwpbixUKHBiZRS0p+ZGhvs4irNEvWD8heHpbsyDXznPhYFOyTjJc13olIqzZCHBouE0FRMUjA+s1gTjaRgVFpqRwC8mfoXPPEVPS7LbRaJL2y7bOifRCTEli3U7BMWgLzKlW/CuebZPAAAAAElFTkSuQmCC) no-repeat 0 0px;
+        padding-left: 18px;
+        padding-bottom: 2px;
+        padding-top: 1px;
+        float: left;
+        height: 15px;
+      }
+      .list a.floder{
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkJCODA2NjVCQUQzRTExRTVCRTQ5QTg0MDA1MUUzMUE3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkJCODA2NjVDQUQzRTExRTVCRTQ5QTg0MDA1MUUzMUE3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QkI4MDY2NTlBRDNFMTFFNUJFNDlBODQwMDUxRTMxQTciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QkI4MDY2NUFBRDNFMTFFNUJFNDlBODQwMDUxRTMxQTciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7KdUdlAAAB0UlEQVR42nySsY7QMBBEZ+1NQnFXQHMCAXfSiYrfQPwOf8SH0CBKhGiAEho6hLgCEDoutpeZjWkvURJnbc++nbW9fPslPv40wAaC91IqEIFnZ47nTx9z4vbLP/0KPLk4R5cGnwHDQoE3P65w+e0qLs/u3SpiL159Di+Gxt3rCKCaAFD4dL5KC5ioasO+V9QqToMPw/kpCX5fN6z3H2EfFX8L0AZYRlbBGMfcOyjsfoDsHA/GN7K+//4VXpjRa0XhJuvMSBLjZuO/M1efNCBJcI4AKcYRhQq8MeXe9Ut1bea3yAuqWC1EJs2uckjDuRvVHQdN0Piy96GyoTJX5yRTcC1WqmzJzBjjicJ1qyhKDtN1N/kjXNWdMUsCLYiMRW6yxVg1KfgaNKiyjLHTG9qf7avTNNUuIrVVtS9UE5HLCw2yC8hYkx8ts5vOUaIuM7su+UL93Bz1GNdxiEplyINOD+SJStmUpR8CWvifTPNqK2bdWiOa3vhVj2vMrHLcDy/kvs1vx0G3lUNjnvb0yB/cvYOLE81MLJk3062WTaBRxiZEklQSyEQeRFyfbjwTN3/w+t2HdNSUruikdQRXFB7J9EHHs6h9lkZ7ujjw8MTxT4ABAKafw7Ib+EFpAAAAAElFTkSuQmCC) no-repeat 0 0px;
+        color: #53a6d0;
+      }
+      .warp{padding: 20px;zoom:1;}
+      .warp:after,ul:after{display:block;clear:both;visibility:hidden;height:0;content:''}
+    </style>
+</head>
+<body>
+  <div class="warp">
+    <h1><!-- 目录结构 --></h1>
+    <h2>{{catalogue}}</h2>
+    <div class="back"><a href="{{back}}">...</a></div>
+    <div class="list">
+      <ul>
+      {{#each files}}
+        <li><a href="{{url}}" class="{{floder}}"><span>{{file}}</span></a></li>
+      {{/each}}
+    </ul>
+    </div>
+  </div>   </body></html>

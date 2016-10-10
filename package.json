@@ -1,0 +1,16 @@
+{
+  "name": "staticServer",
+  "version": "1.0.2",
+  "description": "An serve static ",
+  "repository": {},
+  "dependencies": {
+    "mime": "latest",
+    "yargs": "^6.0.0"
+  },
+  "main": "index.js",
+  "bin": {
+    "static": "bin/route.js"
+  },
+  "author": "zhizhunbao995",
+  "license": "MIT"
+}
