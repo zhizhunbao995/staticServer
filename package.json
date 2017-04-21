@@ -1,8 +1,11 @@
 {
   "name": "staticServer",
-  "version": "1.0.2",
-  "description": "An serve static ",
-  "repository": {},
+  "version": "1.0.4",
+  "description": "An server static ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhizhunbao995/staticServer"
+  },
   "dependencies": {
     "mime": "latest",
     "yargs": "^6.0.0"

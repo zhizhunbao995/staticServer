@@ -13,7 +13,7 @@ var mime        = require('mime');
 // variable 
 var curKey      = '__cur_middleware_index__';
 var workUrl     = process.cwd();
-var moduleUrl   = __dirname.replace(/\/bin(\/)?/g,"");
+var moduleUrl   = __dirname.replace(/(\\|\/)bin(\\|\/)?/g,"");
 var staticMime  = /^(application\/javascript|application\/json|text\/html)$/;
 var cacheModule = {};
 var conModule   = { directory : true};
@@ -126,7 +126,7 @@ function midHeader(req, res, next) {
             }
         }
         res.writeHead(status, {
-            "Last-Modified":cacheModule[req.urlJson.pathname],
+            "Last-Modified":cacheModule[req.urlJson.pathname].toString().replace(/[^\x00-\xff]+/,"CST"),
             'Content-Type': mimeType
         })
     }
